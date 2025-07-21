@@ -32,3 +32,11 @@
 1. Clone the repo  
    ```bash
    git clone https://github.com/nethrasri2307/FitVerse.git
+
+2. Start Apache and MySQL in XAMPP
+
+3. Import the database (diet_app_db.sql) into phpMyAdmin
+
+4. Open your browser and go to:
+   http://localhost/FitVerse/login.html
+   
