@@ -1,0 +1,316 @@
+/* General Body and Container Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Styling */
+header {
+    background-color: #4CAF50; /* Green header */
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    margin-bottom: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    border-radius: 4px;
+}
+
+/* Auth and General Forms */
+.auth-container, .form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.auth-container h2, .form-container h2 {
+    color: #4CAF50;
+    margin-bottom: 25px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    text-align: left;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="number"],
+form input[date],
+form select,
+form textarea {
+    width: calc(100% - 22px); /* Account for padding and border */
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Message Box Styling */
+.message {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    display: none; /* Hidden by default, shown by JS */
+}
+
+/* Specific styling for success and error messages via JS */
+/* .message set by JS for success (background-color: #e7ffe7; border-color: #4CAF50; color: #4CAF50;) */
+/* .message set by JS for error (background-color: #ffe7e7; border-color: #f44336; color: #f44336;) */
+
+
+/* Dashboard Layout */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to single column for small screens */
+    gap: 30px; /* Space between grid items */
+    padding: 20px;
+}
+
+@media (min-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for medium screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr 1fr 1fr; /* Three columns for larger screens */
+    }
+}
+
+.dashboard-section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-section h3 {
+    color: #4CAF50;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Profile Section Specifics */
+#profileForm label {
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Diet Plan and Logged Meals Styling */
+.meal-section, .logged-meal-section {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.meal-section:hover, .logged-meal-section:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.meal-section h4, .logged-meal-section h4 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.15em;
+}
+
+.meal-section ul, .logged-meal-section ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.meal-section ul li, .logged-meal-section ul li {
+    padding: 5px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95em;
+    color: #666;
+}
+
+.meal-section ul li:last-child, .logged-meal-section ul li:last-child {
+    border-bottom: none;
+}
+
+#dailyComparisonStatus {
+    font-weight: bold;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #eafaea; /* Light green background for status */
+    border: 1px solid #d0e8d0;
+}
+
+/* Food Logging Form Specifics */
+.food-item-input {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    align-items: center;
+    gap: 10px; /* Space between elements */
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px dashed #e0e0e0;
+    border-radius: 5px;
+}
+
+.food-item-input label {
+    flex-basis: 100px; /* Give labels a fixed width */
+    margin-bottom: 0; /* Reset margin */
+}
+
+.food-item-input input[type="text"],
+.food-item-input input[type="number"] {
+    flex-grow: 1; /* Allow inputs to take available space */
+    margin-bottom: 0; /* Reset margin */
+    width: auto; /* Override default 100% width */
+}
+
+.food-item-input .food-unit {
+    font-size: 0.9em;
+    color: #777;
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+.food-item-input .remove-food-item {
+    background-color: #f44336; /* Red for remove button */
+    padding: 8px 12px;
+    font-size: 0.9em;
+}
+
+.food-item-input .remove-food-item:hover {
+    background-color: #d32f2f;
+}
+
+/* Specific elements for view log date */
+.date-selector-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.date-selector-group input[type="date"] {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.date-selector-group button {
+    flex-shrink: 0;
+    margin-bottom: 0;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9em;
+    background-color: #f0f2f5;
+    border-top: 1px solid #eee;
+    border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+}
+
+/* Basic Responsiveness */
+@media (max-width: 767px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav a {
+        display: block;
+        padding: 8px;
+    }
+
+    .dashboard-grid {
+        padding: 10px;
+    }
+
+    .dashboard-section {
+        padding: 20px;
+    }
+
+    .food-item-input {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .food-item-input label,
+    .food-item-input input,
+    .food-item-input .food-unit,
+    .food-item-input .remove-food-item {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

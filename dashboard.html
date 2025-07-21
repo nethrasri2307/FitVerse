@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Diet App</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome, <span id="dashboardUsername"></span>!</h1>
+            <nav>
+                <a href="#" id="logoutButton">Logout</a>
+            </nav>
+        </header>
+
+        <main class="dashboard-grid">
+            <section class="dashboard-section" id="profileManagement">
+                <h3>Your Profile</h3>
+                <div id="profileMessage" class="message"></div>
+                <form id="profileForm">
+                    <label for="weightGoal">Weight Goal:</label>
+                    <select id="weightGoal" required>
+                        <option value="">Select a goal</option>
+                        <option value="loss">Weight Loss</option>
+                        <option value="gain">Weight Gain</option>
+                        <option value="maintain">Maintain Weight</option>
+                    </select>
+
+                    <label for="dietaryType">Dietary Type:</label>
+                    <select id="dietaryType" required>
+                        <option value="">Select a type</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="non-veg">Non-Vegetarian</option>
+                    </select>
+
+                    <label for="allergies">Allergies (comma-separated):</label>
+                    <input type="text" id="allergies" placeholder="e.g., nuts, dairy, gluten">
+
+                    <button type="submit">Save Profile</button>
+                </form>
+            </section>
+
+            <section class="dashboard-section" id="dietPlanSection">
+                <h3>Generated Diet Plan</h3>
+                <div id="dietPlanMessage" class="message"></div>
+                <button id="getDietPlanButton">Generate My Diet Plan</button>
+                <div id="planDisplay">
+                    <h4 id="planName"></h4>
+                    <p id="planTotalCalories"></p>
+                    <p id="planAllergiesNote"></p>
+                    <div id="mealsContainer">
+                        </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section" id="logMealSection">
+                <h3>Log Your Meal</h3>
+                <div id="logFoodMessage" class="message"></div>
+                <form id="logFoodForm">
+                    <label for="logDate">Date:</label>
+                    <input type="date" id="logDate" required>
+
+                    <label for="logMealType">Meal Type:</label>
+                    <select id="logMealType" required>
+                        <option value="Breakfast">Breakfast</option>
+                        <option value="Lunch">Lunch</option>
+                        <option value="Dinner">Dinner</option>
+                        <option value="Snack">Snack</option>
+                    </select>
+
+                    <div id="foodItemsContainer">
+                        <div class="food-item-input">
+                            <label for="foodSearch1">Food Item:</label>
+                            <input type="text" class="food-search" id="foodSearch1" placeholder="Search food..." list="foodItemsList">
+                            <input type="hidden" class="food-id" value="">
+                            <label for="foodQuantity1">Quantity:</label>
+                            <input type="number" class="food-quantity" id="foodQuantity1" min="0.1" step="0.1" value="1" required>
+                            <span class="food-unit"></span>
+                            <button type="button" class="remove-food-item">Remove</button>
+                        </div>
+                    </div>
+                    <datalist id="foodItemsList"></datalist>
+                    <button type="button" id="addFoodItem">Add Another Food Item</button>
+
+                    <button type="submit">Log Meal</button>
+                </form>
+            </section>
+
+            <section class="dashboard-section" id="dailyLogSection">
+                <h3>Your Daily Log</h3>
+                <div id="dailyLogMessage" class="message"></div>
+                <div class="date-selector-group">
+                    <label for="viewLogDate">View Date:</label>
+                    <input type="date" id="viewLogDate">
+                    <button id="viewLogButton">View Log</button>
+                </div>
+                <h4>Log for <span id="currentLogDate"></span></h4>
+                <p id="dailyTotalCalories"></p>
+                <div id="loggedMealsContainer">
+                    </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Diet App. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
